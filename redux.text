@@ -1,0 +1,31 @@
+Redux is a predictable state container for javascript applications.
+  Break down into 3 parts.
+    1. It is for javascript application 
+    2. It is a state container
+    3. It is predictable
+
+State of application is the state represented by all the individual components of the apps.
+
+Application [React/Angular/Vue] -------- Connector[Application specific NPM module] -------- Redux
+
+
+Three core concept of redux.
+
+  1. Store   - Holds the state of the application
+  2. Action  - Action describe the changes in the state of the application
+  3. Reducer - Actually carries out the state transition depending on the action
+
+Three Principal
+  1. The state of your whole application is stored in object tree with in single store.
+      {
+        store : {}
+      }
+  2. The only way to change the state is to emit an action, on object describing what happen. 
+      . Not allowed   to directly change state.
+      {
+        type: 'ACTION_NAME'
+      }
+  3. To specify how the state is transformed by action , you write pure reducer.
+      Reducer - (previousState, action ) => newState
+
+    App ==> Dispatch (Action) ==> Reducer ==> newSTate ==> Subscribed ==> App
